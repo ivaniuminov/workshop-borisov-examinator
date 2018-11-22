@@ -2,7 +2,7 @@ package com.iuminov.examinator.examinator.controller;
 
 import com.iuminov.examinator.examinator.model.Exam;
 import com.iuminov.examinator.examinator.service.ExamService;
-import lombok.AllArgsConstructor;
+import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
@@ -10,9 +10,9 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.Map;
 
 @RestController
-@AllArgsConstructor
+@RequiredArgsConstructor
 public class ExamController {
-    public ExamService examService;
+    public final ExamService examService;
 
     @GetMapping("/exercises")
     public Exam getExam(@RequestBody Map<String, Integer> math) {

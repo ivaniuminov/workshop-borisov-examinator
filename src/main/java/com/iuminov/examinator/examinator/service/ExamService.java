@@ -2,15 +2,15 @@ package com.iuminov.examinator.examinator.service;
 
 import com.iuminov.examinator.examinator.model.Exam;
 import com.iuminov.examinator.examinator.model.Section;
-import lombok.AllArgsConstructor;
+import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
 import java.util.Map;
 
 @Service
-@AllArgsConstructor
+@RequiredArgsConstructor
 public class ExamService {
-    public RemoteService remoteService;
+    public final RemoteService remoteService;
 
     public Exam buildExam(Map<String, Integer> map) {
         Exam exam = new Exam();
